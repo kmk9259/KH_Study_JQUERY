@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03-2</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	function addFile(){
+		var div = document.getElementById("div");
+		$('div').append($('[type=file]').first().clone());
+		div.innerHTML += "<br>";
+	}
+	
+	function delFile(){
+		if($('input').last().attr('type') == 'file') {
+			$('[type=file]').last().remove();
+			$('br').last().remove();
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<div id="div">
+		<input type="file">
+		<input type="button" value="추가" onclick="addFile()">
+		<input type="button" value="삭제" onclick="delFile()">
+		<br>
+	</div>
+</body>
+</html>
